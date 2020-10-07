@@ -1,18 +1,10 @@
-#  Proyecto-Hackathon, Agua y el Cambio Climático
+#  Proyecto-Hackathon,
    
-Empowering Ideas
-      _                      _                  ____ __   ___
-#    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-#   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-#  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |      
-# /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
-Angular CLI: 9.1.5
-`
+`Empowering Ideas`
+
+Myapp es el nombre de la carpeta de trabajo.
+
+
 #
-   _             _
-  (_) ___  _ __ (_) ___
-  | |/ _ \| '_ \| |/ __|
-  | | (_) | | | | | (__
-  |_|\___/|_| |_|_|\___| CLI 6.10.1
+
 Official working zone
