@@ -10,8 +10,8 @@ Esta aplicación es puramente desarrollada con Ionic CLI 6.10.1 Framework y Angu
 
 Descargue e instálelos de inmediato para garantizar una experiencia de desarrollo Ionic óptima:
 #
-•	Node.js® es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
-
+•	Node.js®: entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
+        se puede encontrar en el siguiente  link: https://nodejs.org/es/
 •	Editora de código: visual studio code
 
 •	Ionic 
