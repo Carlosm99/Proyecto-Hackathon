@@ -15,12 +15,12 @@ Descargue e instálelos de inmediato para garantizar una experiencia de desarrol
 •	Editora de código: visual studio code
 
 •	Ionic 
-    Usando el siguiente comando en su terminal           
+    :usando el siguiente comando en su terminal           
 	`npm install -g @ionic/cli`
 
 
 •	Angular 
-    Usando el siguiente comando en su terminal           
+    :usando el siguiente comando en su terminal           
 	`npm install -g @angular/cli`
 
 
