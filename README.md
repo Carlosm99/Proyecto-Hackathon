@@ -12,6 +12,7 @@ Descargue e instálelos de inmediato para garantizar una experiencia de desarrol
 #
 •	Node.js®: entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
         se puede encontrar en el siguiente  link: https://nodejs.org/es/
+	
 •	Editora de código: visual studio code
 
 •	Ionic 
