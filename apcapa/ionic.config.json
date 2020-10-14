@@ -1,0 +1,7 @@
+{
+  "name": "apcapa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
