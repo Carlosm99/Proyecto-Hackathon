@@ -11,10 +11,7 @@ const routes: Routes = [
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./componentes/login.module').then( m => m.LoginPageModule)
-  },
+  
   {
     path: 'tuntun',
     loadChildren: () => import('./experiment/tuntun/tuntun.module').then( m => m.TuntunPageModule)
@@ -30,6 +27,10 @@ const routes: Routes = [
   {
     path: 'inside',
     loadChildren: () => import('./nothing/inside/inside.module').then( m => m.InsidePageModule)
+  },
+  {
+    path: 'tustus',
+    loadChildren: () => import('./experiment/tustus/tustus.module').then( m => m.TustusPageModule)
   }
 ];
 
