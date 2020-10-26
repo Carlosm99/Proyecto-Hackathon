@@ -21,7 +21,7 @@ Descargue e instálelos de inmediato para garantizar una experiencia de desarrol
 
 •	Fultter 
     :acceder al siguiente url para descargar el SDK de flutter https://flutter.dev/docs/get-started/install/windows
-    Una vez descargado no descomprimir en Program files, debe de ser en C:\src
+    Una vez descargado no descomprimir en Program files, debe de ser en C:\src\flutter
 
 •	Angular 
     :usando el siguiente comando en su terminal  
