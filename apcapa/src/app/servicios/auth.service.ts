@@ -6,13 +6,15 @@ import { promise } from 'protractor';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Router } from "@angular/router";
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
   constructor(private AFauth : AngularFireAuth,
-    private router : Router) { }
+    private router : Router,
+    private db : AngularFirestore) { }
 
   login(email:string, password:string){
 
@@ -27,5 +29,22 @@ export class AuthService {
     this.AFauth.signOut().then(() =>{
       this.router.navigate(['/login']);
     })
+  }
+
+  register(email : string, password : string, name : string, telfon : string, contract : string ){
+    return new Promise ((resolve, reject) => {
+      this.AFauth.createUserWithEmailAndPassword(email, password).then( res =>{
+        console.log(res.user.uid);
+        const uid =res.user.uid; 
+        this.db.collection('users').doc(uid).set({
+          name : name,
+          telfon : telfon,
+          contract : contract,
+          uid : uid
+        })
+       resolve(res)
+      }).catch( err => reject(err))
+    })
+    
   }
 }
