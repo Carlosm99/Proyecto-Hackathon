@@ -1,29 +1,36 @@
-<ion-header>
+<!---<ion-header>
   <ion-toolbar>
     <ion-title class="maintitle">Capa</ion-title>
   </ion-toolbar>
   
-</ion-header>
+</ion-header>---->
 
-<ion-content padding>
-  <br>
-  <img class="icon" src="" alt="">
-  <br>
+<ion-content class="body" padding>
+  
+  <img class="icon" src="assets/capa_login.png" alt="">
+
   <br>
   <br>
   <ion-item class="email">
     <ion-label position="floating"> correo</ion-label>
     <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
-
+     <ion-icon slot="start" name="person" ></ion-icon> 
   </ion-item>
+  <br>
   <ion-item class="password">
     <ion-label position="floating"> Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+   <ion-input    [type]="passwordType" type="password" [(ngModel)]="password" name="password" clearOnEdit="false"></ion-input>
+   <ion-icon slot="end" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+   <ion-icon slot="start" name="key" ></ion-icon> 
 
   </ion-item>
   <br>
-  <ion-button (click)="onSubmitlogin()" class="loginbotton"color="success" shape="round">Login</ion-button>
+  
+  <ion-button (click)="onSubmitlogin()" class="loginbotton"shape="round">Ingresar</ion-button>
   <br>
-  <br>
-  <P class="signup" routerLink="/register">Sign up</P>
+  <ion-button class="loginbotton"routerLink="/register"shape="round">Crea tu cuenta CAPA</ion-button>
+  
+  
+  <p class="signup">Olvide mi contraseña</p>
+
 </ion-content>
