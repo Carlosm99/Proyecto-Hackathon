@@ -2,9 +2,9 @@
    
 `Empowering Ideas`
 
-Dos carpetas de trabajo.
+ carpetas de trabajo.
 
-Esta solucion es puramente desarrollada con Ionic CLI 6.10.1 Framework, Angular CLI: 9.1.5. y Flutter Framework
+Esta solucion es puramente desarrollada con Ionic CLI 6.10.1 Framework y Angular CLI: 9.1.5. 
 
 # Instrucciones para el entorno de trabajo 
 
@@ -19,10 +19,6 @@ Descargue e instálelos de inmediato para garantizar una experiencia de desarrol
     :usando el siguiente comando en su terminal   
 	`npm install -g @ionic/cli`
 
-•	Fultter 
-    :acceder al siguiente url para descargar el SDK de flutter https://flutter.dev/docs/get-started/install/windows
-    Una vez descargado no descomprimir en Program files, debe de ser en C:\src\flutter
-    Agregaremos la ruta a nuestro entorno de variables
 
 •	Angular 
     :usando el siguiente comando en su terminal  
