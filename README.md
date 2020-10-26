@@ -2,13 +2,13 @@
    
 `Empowering Ideas`
 
-Myapp es el nombre de la carpeta de trabajo.
+Dosccarpetas de trabajo.
 
-Esta aplicación es puramente desarrollada con Ionic CLI 6.10.1 Framework y Angular CLI: 9.1.5.
+Esta solucion es puramente desarrollada con Ionic CLI 6.10.1 Framework, Angular CLI: 9.1.5. y Flutter
 
 # Instrucciones para el entorno de trabajo 
 
-Descargue e instálelos de inmediato para garantizar una experiencia de desarrollo Ionic óptima:
+Descargue e instálelos de inmediato para garantizar una experiencia de desarrollo óptima:
 #
 •	Node.js®: entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome.
         se puede encontrar en el siguiente  link: https://nodejs.org/es/
@@ -16,13 +16,17 @@ Descargue e instálelos de inmediato para garantizar una experiencia de desarrol
 •	Editora de código: visual studio code
 
 •	Ionic 
-    :usando el siguiente comando en su terminal           
+    :usando el siguiente comando en su terminal   
 	`npm install -g @ionic/cli`
 
+•	Fultter 
+    :acceder al siguiente url para descargar el SDK de flutter https://flutter.dev/docs/get-started/install/windows
+    Una vez descargado no descomprimir en Program files, debe de ser en C:\src
 
 •	Angular 
-    :usando el siguiente comando en su terminal           
+    :usando el siguiente comando en su terminal  
 	`npm install -g @angular/cli`
+
 
 
 
