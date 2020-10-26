@@ -2,9 +2,9 @@
    
 `Empowering Ideas`
 
-Dosccarpetas de trabajo.
+Dos carpetas de trabajo.
 
-Esta solucion es puramente desarrollada con Ionic CLI 6.10.1 Framework, Angular CLI: 9.1.5. y Flutter
+Esta solucion es puramente desarrollada con Ionic CLI 6.10.1 Framework, Angular CLI: 9.1.5. y Flutter Framework
 
 # Instrucciones para el entorno de trabajo 
 
