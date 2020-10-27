@@ -19,7 +19,7 @@ ion-menu-button {
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: black;
   margin: 0;
 }
 
@@ -42,12 +42,24 @@ ion-content{
   display: center;
   justify-content: center;
   margin: auto;
-  --background: #ffffff;
+  --background: rgb(221, 221, 207);
   --color: #070101;
+ 
+ 
 }
 .cardstyle{
   margin: 12px 12px 12px 0px;
-  border: 1px #000405e7!important;
+  border: 3px ;
   width: 300px;
   border-radius: 12px;
+ 
+  --ion-background-color:white;
+}
+.resizeicon{
+  font-size: 40px;
+
+}
+.fixthetext{
+  font-size: 16px;
+  
 }
