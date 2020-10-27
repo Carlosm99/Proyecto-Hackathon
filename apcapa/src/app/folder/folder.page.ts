@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from "../servicios/auth.service";
-import { NavController } from '@ionic/angular'
+import { NavController, IonSlides } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-folder',
@@ -9,6 +10,14 @@ import { NavController } from '@ionic/angular'
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
+  selectedSlide: any;
+  segment =0;
+
+  sliderOptions ={
+   initialSlide: 0,
+   slidesPerview: 1,
+   speed: 400
+  }
   public folder: string;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -22,5 +31,13 @@ export class FolderPage implements OnInit {
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
-
+  async segmentChanged(ev){
+    await this.selectedSlide.slideTo(this.segment);
+    }
+   async slideShanged(slides : IonSlides){
+   this.selectedSlide = slides;
+   slides.getActiveIndex().then(selectedIndex =>{
+     this.segment = selectedIndex;
+   })
+   }
 }
