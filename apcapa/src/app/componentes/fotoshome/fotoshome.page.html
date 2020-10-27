@@ -9,7 +9,7 @@
 </ion-header>
  
 <ion-content padding>
-  <h3 *ngIf="images.length == 0" text-center>Seleccione una imagen </h3>
+  <h3 *ngIf="images.length == 0" text-center> </h3>
  
   <ion-list>
     <ion-item *ngFor="let img of images; index as pos" text-wrap>
@@ -33,6 +33,6 @@
   <ion-toolbar color="primary">
     <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
       <ion-icon slot="start" name="camera"></ion-icon>
-      Select Image</ion-button>
+      Seleccione una imagen</ion-button>
   </ion-toolbar>
 </ion-footer>
