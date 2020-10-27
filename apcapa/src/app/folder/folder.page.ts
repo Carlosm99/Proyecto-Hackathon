@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from "../servicios/auth.service";
 import { NavController, IonSlides, ActionSheetController, IonSegment } from '@ionic/angular';
+import { url } from 'inspector';
+import {Router} from '@angular/router';
 
 
 
@@ -32,7 +34,8 @@ export class FolderPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     public authservice : AuthService,
     private navCtrl: NavController,
-    public actionSheetController: ActionSheetController) { }
+    public actionSheetController: ActionSheetController,
+    private route:Router) { }
 
   Onlogout(){
       this.authservice.logout();
@@ -58,19 +61,20 @@ export class FolderPage implements OnInit {
 
    async openActionSheet() {
     const actionSheet = await this.actionSheetController.create({
+      
       header: 'Seleccione tipo reporte ',
       cssClass: 'my-custom-class',
       mode: 'ios',
       buttons: [{
-        text: 'Fugas en predio o calle',
-        role: '',
+        text: 'Fugas en predio o calle',        
+        role: '',      
         icon: '',
-        handler: () => {
-          console.log('Delete clicked');
+        handler: () => {                
+          this.route.navigate(['/','fotoshome']);
         }
       }, {
         text: 'Medidores rotos o perdidos',
-        icon: '',
+        icon: '',        
         handler: () => {
           console.log('Share clicked');
         }
