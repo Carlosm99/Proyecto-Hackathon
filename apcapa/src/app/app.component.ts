@@ -16,29 +16,29 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Bandeja de entrada',
+      title: 'ARMONIZACION CONTABLE',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'analytics'
     },
     {
-      title: 'Bandeja de salida',
+      title: 'TRANSPARENCIA',
       url: '/folder/Outbox',
-      icon: 'paper-plane'
+      icon: 'swap-horizontal'
     },
     {
-      title: 'Favoritos',
+      title: 'TRÁMITES Y SERVICIOS',
       url: '/folder/Favorites',
-      icon: 'heart'
+      icon: 'folder'
     },
     {
-      title: 'Archivado',
+      title: 'CONSEJEROS CIUDADANOS',
       url: '/folder/Archived',
-      icon: 'archive'
+      icon: 'crop'
     },
     {
-      title: 'Reportes',
+      title: 'CONÓCENOS',
       url: '/folder/Trash',
-      icon: 'trash'
+      icon: 'information-circle'
     }
   ];
   public labels = ['Contactos', 'Notificaciones'];
