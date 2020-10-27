@@ -11,10 +11,10 @@
 <ion-content [fullscreen]="true">
   <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideShanged(slides)" (ionSlidesDidLoad)="slideShanged(slides)">
    
-   
+<!-----------separacion0-->
     <ion-slide class="slideposition">
       <ion-grid >
-        <ion-row >
+        <ion-row class="state">
          <ion-col class="someclass">
             <ion-card class="cardstyle">
               <ion-card-header>
@@ -39,7 +39,7 @@
 
    
         
-        <ion-row >
+        <ion-row class="state">
           <ion-col class="someclass">
           <ion-card class="cardstyle">
             <ion-card-header>
@@ -73,58 +73,69 @@
   <ion-slide class="slideposition">
     
     <ion-grid >
-      <ion-row >
-       <ion-col class="someclass">
-         <p class="recip">Estado de cuenta</p>
-          <ion-card class="cardstyles">
-            <ion-card-header class="paddingy" >
-                 <p>Octuber</p> 
-                  <p>01 septiembre al 01 octubre</p> 
-                  <p>TOTAL A PAGAR</p> 
-                  <p>348.94</p>          
-               <!-----<ion-card-title>TOTAL A PAGAR </ion-card-title>---->
-            </ion-card-header>
-      
-             <ion-card-content >          
-                <ion-button (click)="onSubmitlogin()" class="loginbottons"shape="round">Pagar factura</ion-button>
-            </ion-card-content>
-         </ion-card>
-         
-         <ion-button (click)="onSubmitlogin()" class="loginbottonss"shape="round">
-           <p class="recipe">Descargar Estado de Cuenta</p>
-           <a href="/assets/toppart.jpg" download></a>
-           <ion-icon class="resizeicon"slot="start" name="arrow-down-circle" ></ion-icon>
-          </ion-button>
-         
-          
+      <label class="recip" >Estado de cuenta</label>      
+      <ion-row class="state">
+            <ion-col class="someclass">                 
+           <ion-card class="cardstyles">             
+             <ion-card-header class="paddingy">
+                    <p>Octuber</p>
+                    <p>01 septiembre al 01 octubre</p>
+                    <p>TOTAL A PAGAR</p>                
+             <ion-card-title>348.94</ion-card-title>
+             </ion-card-header>       
+              <ion-card-content>                  
+               <br>
+                 <ion-button (click)="onSubmitlogin()" class="loginbottonx"shape="round">Pagar factura</ion-button>
+             </ion-card-content>
+          </ion-card>
         </ion-col>
-     </ion-row >
+      </ion-row >
 
+     <ion-row>
+      <ion-button (click)="onSubmitlogin()" class="loginbottonss"shape="round">
+        <p class="recipe">Descargar Estado de Cuenta</p>
+        <a href="/assets/toppart.jpg" download></a>
+        <ion-icon class="resizeicon"slot="start" name="arrow-down-circle" ></ion-icon>
+       </ion-button>
+
+             <!-- Default Segment -->
+             <br>
+             <br>
+             <ion-segment segment='0' [(ngModel)]="segmen"mode='ios'class="ss" (ionChange)="segmentChanged($event)">
+               <ion-segment-button  class="divbut" value="0">
+                 <ion-label>Factura Actual</ion-label>
+                  </ion-segment-button>
+                <ion-segment-button class="divbut"value="historio">
+                 <ion-label>Historial</ion-label>
+               </ion-segment-button>
+             </ion-segment>
+     </ion-row>
+
+     <ion-row class="state">
+      <ion-col class="someclass">
+      <ion-card class="cardstyle">
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-item>
+              <ion-label>Reportes:</ion-label>
+              <ion-icon class="resizeicon"slot="start"name="alert-circle"></ion-icon>
+            </ion-item>              
+           </ion-card-subtitle>
+          <ion-card-title>Tipo de reporte</ion-card-title>
+        </ion-card-header>
       
+        <ion-card-content>
+          <ion-item>
+              <ion-button (click)="openActionSheet()" class="loginbotton"shape="round">Seleccione tipo reporte </ion-button>
+           </ion-item>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    </ion-row>
  
       
-      <ion-row >
-        <ion-col class="someclass">
-        <ion-card class="cardstyle">
-          <ion-card-header>
-            <ion-card-subtitle>
-              <ion-item>
-                <ion-label>Reportes:</ion-label>
-                <ion-icon class="resizeicon"slot="start"name="help-circle"></ion-icon>
-              </ion-item>              
-             </ion-card-subtitle>
-            <ion-card-title>Tipo de reporte</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-item>
-                <ion-button (click)="openActionSheet()" class="loginbotton"shape="round">Seleccione tipo reporte </ion-button>
-             </ion-item>
 
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      </ion-row>
    
     </ion-grid>
     

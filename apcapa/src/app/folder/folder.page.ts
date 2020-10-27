@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from "../servicios/auth.service";
-import { NavController, IonSlides, ActionSheetController } from '@ionic/angular';
+import { NavController, IonSlides, ActionSheetController, IonSegment } from '@ionic/angular';
 
 
 
@@ -13,11 +13,14 @@ import { NavController, IonSlides, ActionSheetController } from '@ionic/angular'
 
 export class FolderPage implements OnInit {
 
+
+
   slideOptions = {
     direction: 'vertical',
   };
   selectedSlide: any;
   segment =0;
+  segmen =0;
 
   sliderOptions ={
    initialSlide: 0,
@@ -37,6 +40,7 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    
   }
   async segmentChanged(ev){
     await this.selectedSlide.slideTo(this.segment);

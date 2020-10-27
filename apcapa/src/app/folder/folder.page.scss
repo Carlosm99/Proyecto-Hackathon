@@ -45,7 +45,6 @@ ion-content{
   --background: rgb(221, 221, 207);
   --color: #070101;
  
- 
 }
 .cardstyle{
   margin: 12px 12px 12px 0px;
@@ -69,14 +68,17 @@ align-items: flex-end;
 
 }
 .slideposition{
-position: center;
-align-items: flex-end;
-display: center;
+display: flex;
+justify-content: center;
 }
 ion-col.someclass {
+ /* text-align: center;
+  /*right: center;/*This should be 20px or center*/
+ /* left: center;/*This should be 20px or center
+  justify-content: center;*/
+  display: flex;
+  justify-content: center;
   text-align: center;
-  right: 20px;/*This should be 20px or center*/
-  left: 20px;/*This should be 20px or center*/
 }
 ion-select-option{
   position: initial;
@@ -98,10 +100,11 @@ ion-item.fixselection{
 .cardstyles{
   margin: 12px 12px 12px 0px;
   border: 3px ;
-  width: 300px;
+  width: 330px;
   border-radius: 16px;
-  height: 180px;
+  height: 195px;
   --ion-background-color:white;
+
 }
 .loginbottons{
   display: flex; justify-content: center;
@@ -123,6 +126,9 @@ ion-item.fixselection{
 .recip{
   font-size: 24px;
   font-weight: bold;
+  padding-bottom: 2px;
+  padding-top: 2px;
+ 
 }
 .recipe{
   font-size: 13px;
@@ -132,7 +138,25 @@ ion-item.fixselection{
 .loginbottonss{
   display: flex; justify-content: center;
   border-radius: 50%;
-  width: 280px;
+  width: 260px;
+  position: center;
+  display: center;
+  justify-content: center;
+  margin: auto;
+  /*--background: rgb(221, 221, 207);*/
+  --color: #070101;
+  --background: rgb(221, 221, 207);
+   text-transform: lowercase;
+   font-weight: bold;
+}
+.divdedbutton{
+  border-radius: 50%;
+}
+.divedebutton{
+  display: flex; justify-content: center;
+  border-radius: 24px;
+  width: 292px;
+  height: 55px;
   position: center;
   display: center;
   justify-content: center;
@@ -142,4 +166,35 @@ ion-item.fixselection{
   --ion-background-color: #00A2C5!important;
    text-transform: lowercase;
    font-weight: bold;
+   border-color: black;
 }
+.divbut{
+  --border-color:black;
+  --border-width:1rem;
+  --color: #070101;
+}
+.ss{
+  --border-color:black;
+  --border-width:2rem;
+  --ion-background-color: #ffffff!important;
+  border-radius: 12px;
+  justify-content: center;
+ 
+}
+.state {
+  display: flex;
+  justify-content: center;
+  
+  }
+  .loginbottonx{
+    display: flex; justify-content: center;
+    border-radius: 50%;
+    width: 200px;
+    position: center;
+    display: center;
+    justify-content: center;
+    margin: auto;
+    --background: rgb(221, 221, 207);
+    --color: #070101;
+  
+  }
