@@ -52,35 +52,54 @@ export class FolderPage implements OnInit {
 
    async openActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Seleccione tipo reporte ',
       cssClass: 'my-custom-class',
+      mode: 'ios',
       buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
+        text: 'Fugas en predio o calle',
+        role: '',
+        icon: '',
         handler: () => {
           console.log('Delete clicked');
         }
       }, {
-        text: 'Share',
-        icon: 'share',
+        text: 'Medidores rotos o perdidos',
+        icon: '',
         handler: () => {
           console.log('Share clicked');
         }
       }, {
-        text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
+        text: 'Tomas clandestinas',
+        icon: '',
         handler: () => {
           console.log('Play clicked');
         }
       }, {
-        text: 'Favorite',
-        icon: 'heart',
+        text: 'Quejas y denuncias',
+        icon: '',
         handler: () => {
           console.log('Favorite clicked');
         }
       }, {
-        text: 'Cancel',
+        text: 'Falta de suministro de agua',
+        icon: '',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Inconformidades',
+        icon: '',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cambio de giro ',
+        icon: '',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
         handler: () => {
