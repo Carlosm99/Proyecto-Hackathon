@@ -46,7 +46,7 @@
               <ion-card-subtitle>
                 <ion-item>
                   <ion-label>Reportes:</ion-label>
-                  <ion-icon class="resizeicon"slot="start"name="help-circle"></ion-icon>
+                  <ion-icon class="resizeicon"slot="start"name="alert-circle"></ion-icon>
                 </ion-item>              
                </ion-card-subtitle>
               <ion-card-title>Tipo de reporte</ion-card-title>
@@ -67,33 +67,72 @@
       
     </ion-slide>
 
-  <!-------separacion aqui-->
+  <!-------separacion aqui 1-->
 
 
-    <ion-slide>
-      <ion-grid>
-        <ion-row><img class="img4" src="assets/res1.jpg"></ion-row>
-        <br>
-        <ion-row>
+  <ion-slide class="slideposition">
+    
+    <ion-grid >
+      <ion-row >
+       <ion-col class="someclass">
+         <p class="recip">Estado de cuenta</p>
+          <ion-card class="cardstyles">
+            <ion-card-header class="paddingy" >
+                 <p>Octuber</p> 
+                  <p>01 septiembre al 01 octubre</p> 
+                  <p>TOTAL A PAGAR</p> 
+                  <p>348.94</p>          
+               <!-----<ion-card-title>TOTAL A PAGAR </ion-card-title>---->
+            </ion-card-header>
+      
+             <ion-card-content >          
+                <ion-button (click)="onSubmitlogin()" class="loginbottons"shape="round">Pagar factura</ion-button>
+            </ion-card-content>
+         </ion-card>
          
-          <ion-col><h1></h1></ion-col>
-          <ion-button class="pos"color="success">kkkkk</ion-button>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <img class="img4"src="assets/res2.jpg">
-            <label>“Plesant dinners with nice service.”</label>
-          </ion-col>
-          <ion-col>
-            <img class="img4"src="assets/w1.jpg">
-            <label>“Sample Creole chicken stew in Belize City, Mestizo tamales or escabeche on Ambergriz Caye, Mayan fish in San Pedro, Garifuna hudut in Hopkins, or Mayan caldo in Punta Gorda."</label>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-slide>
+         <ion-button (click)="onSubmitlogin()" class="loginbottonss"shape="round">
+           <p class="recipe">Descargar Estado de Cuenta</p>
+           <a href="/assets/toppart.jpg" download></a>
+           <ion-icon class="resizeicon"slot="start" name="arrow-down-circle" ></ion-icon>
+          </ion-button>
+         
+          
+        </ion-col>
+     </ion-row >
+
+      
+ 
+      
+      <ion-row >
+        <ion-col class="someclass">
+        <ion-card class="cardstyle">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-item>
+                <ion-label>Reportes:</ion-label>
+                <ion-icon class="resizeicon"slot="start"name="help-circle"></ion-icon>
+              </ion-item>              
+             </ion-card-subtitle>
+            <ion-card-title>Tipo de reporte</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-item>
+                <ion-button (click)="openActionSheet()" class="loginbotton"shape="round">Seleccione tipo reporte </ion-button>
+             </ion-item>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+   
+    </ion-grid>
+    
+    
+  </ion-slide>
 
 
-
+<!-------separa aqui-->
 
 
 
