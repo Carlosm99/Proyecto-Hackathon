@@ -104,7 +104,7 @@ ion-item.fixselection{
   border-radius: 16px;
   height: 195px;
   --ion-background-color:white;
-
+ /* height: 413px;*/
 }
 .loginbottons{
   display: flex; justify-content: center;
@@ -198,3 +198,26 @@ ion-item.fixselection{
     --color: #070101;
   
   }
+  .paradesliso{
+    height: 413px;
+  }
+  .lefttt{
+    text-align: left;
+    border-color: black;
+    border-width: 4rem;
+    border: black;
+  }
+  .vdddd{
+    border-radius: 12px;
+    width: 260px;
+    --ion-background-color: #dbd9d9!important;
+  }
+  .iicon{
+    display: left;
+    margin-right: auto;
+    margin-left: auto ;
+    width: 2px;
+    height: 2px;   
+    overflow: hidden;
+    border-radius: 28%;
+}

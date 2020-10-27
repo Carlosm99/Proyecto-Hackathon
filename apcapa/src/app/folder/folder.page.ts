@@ -52,7 +52,9 @@ export class FolderPage implements OnInit {
    })
    }
 
-
+   slideOpt ={
+    direction: 'vertical'
+  };
 
    async openActionSheet() {
     const actionSheet = await this.actionSheetController.create({
