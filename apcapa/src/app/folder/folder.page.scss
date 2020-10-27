@@ -63,3 +63,30 @@ ion-content{
   font-size: 16px;
   
 }
+.modifygrid{
+position:center;
+align-items: flex-end;
+
+}
+.slideposition{
+position: center;
+align-items: flex-end;
+display: center;
+}
+ion-col.someclass {
+  text-align: center;
+  right: 20px;
+  left: 20px;
+}
+ion-select-option{
+  position: initial;
+  margin-left: 100px;
+  width:40%;
+  text-align: center;
+}
+ion-item.fixselection{
+  position: initial;
+  margin-left: 100px;
+  width:40%;
+  text-align: center;
+}

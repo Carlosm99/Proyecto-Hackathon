@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from "../servicios/auth.service";
-import { NavController, IonSlides } from '@ionic/angular';
+import { NavController, IonSlides, ActionSheetController } from '@ionic/angular';
+
 
 
 @Component({
@@ -9,7 +10,12 @@ import { NavController, IonSlides } from '@ionic/angular';
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
 })
+
 export class FolderPage implements OnInit {
+
+  slideOptions = {
+    direction: 'vertical',
+  };
   selectedSlide: any;
   segment =0;
 
@@ -22,7 +28,8 @@ export class FolderPage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     public authservice : AuthService,
-    private navCtrl: NavController) { }
+    private navCtrl: NavController,
+    public actionSheetController: ActionSheetController) { }
 
   Onlogout(){
       this.authservice.logout();
@@ -40,4 +47,47 @@ export class FolderPage implements OnInit {
      this.segment = selectedIndex;
    })
    }
+
+
+
+   async openActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Albums',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Share',
+        icon: 'share',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Play (open modal)',
+        icon: 'caret-forward-circle',
+        handler: () => {
+          console.log('Play clicked');
+        }
+      }, {
+        text: 'Favorite',
+        icon: 'heart',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+}
 }
