@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'fotoshome',
     loadChildren: () => import('./componentes/fotoshome/fotoshome.module').then( m => m.FotoshomePageModule)
+  },
+  {
+    path: 'pagoonline',
+    loadChildren: () => import('./componentes/pagoonline/pagoonline.module').then( m => m.PagoonlinePageModule)
   }
 ];
 
