@@ -9,11 +9,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-progress-bar type="indeterminate" color="light" ></ion-progress-bar>
   <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideShanged(slides)" (ionSlidesDidLoad)="slideShanged(slides)">
    
 <!-----------separacion0-->
     <ion-slide class="slideposition">
       <ion-grid >
+        <ion-row><ion-progress-bar type="indeterminate" reversed="true"color="light" ></ion-progress-bar></ion-row>
         <ion-row class="state">
          <ion-col class="someclass">
             <ion-card class="cardstyle">
@@ -36,7 +38,7 @@
          </ion-col>
        </ion-row >
 
-
+    
    
         
         <ion-row class="state">
@@ -73,6 +75,7 @@
   <ion-slide class="slideposition">
     
     <ion-grid >
+      <ion-row><ion-progress-bar type="indeterminate" reversed="true"color="light" ></ion-progress-bar></ion-row>
       <label class="recip" >Estado de cuenta</label>      
       <ion-row class="state">
             <ion-col class="someclass">                 
@@ -111,18 +114,25 @@
              </ion-segment>
      </ion-row>
 
+  
      <ion-row class="state">
+       
       <ion-col class="someclass">
-      <ion-card class="cardstyle">
- 
-      
-        <ion-card-content class="paradesliso">
-          <ion-slides  [options]="slideOpt">
-            <ion-slide>
+     <ion-card class="cardstyle">
+ <!----- 
+      --------aqui voy a poner el despliegue-->
+     
+      <!-------------------aqui termina la modificacion----->
+        <ion-card-content class="paradesliso"> 
+       <!---    <ion-slides  [options]="slideOpt">
+            <ion-slide>  ------>
+              <ion-slides  [options]="slideOpt">
+                <ion-slide>
+                  
             <ion-grid>
               <ion-row>
                 <ion-col>
-                  <ion-card class="vdddd">
+                  <ion-card id="card1" class="vdddd">
                     <ion-card-header >
                       
                       <ion-card-subtitle class="lefttt">Noviembre</ion-card-subtitle>
@@ -179,13 +189,18 @@
             </ion-grid>
           </ion-slide>
                        
-          </ion-slides>
+        </ion-slides> 
+       <!---   </ion-slide>
+                       
+          </ion-slides>   ----->
 
-        </ion-card-content>
-      </ion-card>
+     <!------   </ion-card-content>
+      </ion-card>--->
+    </ion-card-content>
+  </ion-card>
     </ion-col>
     </ion-row>
- 
+  
       
 
    
@@ -202,6 +217,7 @@
 <ion-slide class="slideposition">
     
   <ion-grid >
+    <ion-row><ion-progress-bar type="indeterminate" reversed="true"color="light" ></ion-progress-bar></ion-row>
     <label class="recip" >Estado de cuenta</label>      
     <ion-row class="state">
           <ion-col class="someclass">                 
@@ -270,7 +286,7 @@
 
       <ion-slide>
       <ion-grid>
-
+        <ion-row><ion-progress-bar type="indeterminate" reversed="true"color="light" ></ion-progress-bar></ion-row>
         <ion-row>
           <ion-col>
             <p style="font-size: 18px;font-weight: bold;">SERVICIOS:</p>
@@ -297,22 +313,22 @@
 <ion-footer>
   <ion-toolbar>
     <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
-      <ion-segment-button value="0">
+      <ion-segment-button (click)="scrollToTop()" value="0">
         <ion-icon name="home"></ion-icon>
         
       </ion-segment-button>
 
-      <ion-segment-button value="1">
+      <ion-segment-button (click)="scrollToTop()" value="1">
         <ion-icon name="newspaper"></ion-icon>
         
       </ion-segment-button>
   
-      <ion-segment-button value="2">
+      <ion-segment-button (click)="scrollToTop()" value="2">
         <ion-icon name="document-text"></ion-icon>
         
       </ion-segment-button>
      
-      <ion-segment-button value="3">
+      <ion-segment-button (click)="scrollToTop()" value="3">
         <ion-icon name="help-circle"></ion-icon>
       
       </ion-segment-button>

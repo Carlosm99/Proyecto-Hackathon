@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'ARMONIZACION CONTABLE',
+      title: 'INICIO',
       url: '/folder/Inbox',
-      icon: 'analytics'
+      icon: 'home'
     },
     {
       title: 'TRANSPARENCIA',
