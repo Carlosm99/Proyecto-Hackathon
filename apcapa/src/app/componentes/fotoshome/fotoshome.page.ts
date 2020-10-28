@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
 import { FilePath } from '@ionic-native/file-path/ngx';
- 
+
 import { finalize } from 'rxjs/operators';
  
 const STORAGE_KEY = 'my_images';
@@ -30,7 +30,6 @@ export class FotoshomePage implements OnInit {
       this.loadStoredImages();
     });
   }
-
   loadStoredImages() {
     this.storage.get(STORAGE_KEY).then(images => {
       if (images) {
@@ -44,7 +43,6 @@ export class FotoshomePage implements OnInit {
       }
     });
   }
-
   pathForImage(img) {
     if (img === null) {
       return '';
@@ -53,7 +51,6 @@ export class FotoshomePage implements OnInit {
       return converted;
     }
   }
- 
   async presentToast(text) {
     const toast = await this.toastController.create({
         message: text,
@@ -62,70 +59,66 @@ export class FotoshomePage implements OnInit {
     });
     toast.present();
   }
-
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
-        header: "Select Image source",
+        header: "Seleccione una imagen",
+        mode:'ios',
         buttons: [{
-                text: 'Load from Library',
+                text: 'Cargar desde biblioteca',
                 handler: () => {
                     this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
                 }
             },
             {
-                text: 'Use Camera',
+                text: 'Usar cámara',
                 handler: () => {
                     this.takePicture(this.camera.PictureSourceType.CAMERA);
                 }
             },
             {
-                text: 'Cancel',
+                text: 'Cancelar',
                 role: 'cancel'
             }
         ]
     });
     await actionSheet.present();
 }
- 
+
 takePicture(sourceType: PictureSourceType) {
-    var options: CameraOptions = {
-        quality: 100,
-        sourceType: sourceType,
-        saveToPhotoAlbum: false,
-        correctOrientation: true
-    };
- 
-    this.camera.getPicture(options).then(imagePath => {
-        if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
-            this.filePath.resolveNativePath(imagePath)
-                .then(filePath => {
-                    let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
-                    let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-                    this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-                });
-        } else {
-            var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-            var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-            this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
-        }
-    });
+  var options: CameraOptions = {
+      quality: 100,
+      sourceType: sourceType,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+  };
+ /*here a problem I encountered creo que debe de ser platform en el pusto de plt*/ 
+  this.camera.getPicture(options).then(imagePath => {
+      if (this.plt.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+          this.filePath.resolveNativePath(imagePath)
+              .then(filePath => {
+                  let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
+                  let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
+                  this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+              });
+      } else {
+          var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+          var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+          this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+      }
+  });
 
-    
- 
 }
-
 createFileName() {
   var d = new Date(),
       n = d.getTime(),
       newFileName = n + ".jpg";
   return newFileName;
 }
-
 copyFileToLocalDir(namePath, currentName, newFileName) {
   this.file.copyFile(namePath, currentName, this.file.dataDirectory, newFileName).then(success => {
       this.updateStoredImages(newFileName);
   }, error => {
-      this.presentToast('Error while storing file.');
+      this.presentToast('Error al almacenar el archivo.');
   });
 }
 
@@ -164,9 +157,53 @@ deleteImage(imgEntry, position) {
       var correctPath = imgEntry.filePath.substr(0, imgEntry.filePath.lastIndexOf('/') + 1);
 
       this.file.removeFile(correctPath, imgEntry.name).then(res => {
-          this.presentToast('File removed.');
+          this.presentToast('Archivo eliminado.');
       });
   });
 }
 
+
+startUpload(imgEntry) {
+  this.file.resolveLocalFilesystemUrl(imgEntry.filePath)
+      .then(entry => {
+          ( < FileEntry > entry).file(file => this.readFile(file))
+      })
+      .catch(err => {
+          this.presentToast('Error al leer el archivo.');
+      });
+}
+
+readFile(file: any) {
+  const reader = new FileReader();
+  reader.onload = () => {
+      const formData = new FormData();
+      const imgBlob = new Blob([reader.result], {
+          type: file.type
+      });
+      formData.append('file', imgBlob, file.name);
+      this.uploadImageData(formData);
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+async uploadImageData(formData: FormData) {
+  const loading = await this.loadingController.create({
+      message: 'Subiendo imagen ...',
+  });
+  await loading.present();
+
+  this.http.post("http://localhost:8888/upload.php", formData)
+      .pipe(
+          finalize(() => {
+              loading.dismiss();
+          })
+      )
+      .subscribe(res => {
+          if (res['success']) {
+              this.presentToast('Carga de archivo completa')
+          } else {
+              this.presentToast('Error al cargar el archivo.')
+          }
+      });
+}
 }
