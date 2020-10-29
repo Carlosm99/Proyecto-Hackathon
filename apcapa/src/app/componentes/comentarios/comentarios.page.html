@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     
-    <img class="icon" src="assets/toppart.jpg" alt="">
+    <h1 class="cen">Comentarios</h1>
     <ion-button class="iconfont" href="/folder/Inbox" slot="start">
       <ion-icon name="close"></ion-icon>
     </ion-button>
@@ -14,5 +14,17 @@
 </ion-header>
 
 <ion-content>
- 
+  
+  <br>
+  
+    <ion-item class="allinputstyle">
+      
+      <ion-input type="email" [(ngModel)]="email" name="email" placeholder="carlosmo@gmail.com"><ion-label >De:</ion-label></ion-input>  
+    </ion-item>
+<br>
+      <ion-item>
+      <textarea name="textarea" rows="7" cols="50" class="allinputstyles" [(ngModel)]="text"
+      placeholder="¿Quieres enviarnos comentarios? Nos encantaría que lo hicieras, pero no compartas información sensible. ¿Tienes preguntas o inquietudes legales?  Visita el Centro de ayuda o comunícate con asistencia. "></textarea> 
+    </ion-item>
+
 </ion-content>

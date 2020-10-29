@@ -1,16 +1,29 @@
-.icon{  
-    display: flex;
-    position: center;
-    /*margin-right: auto;*/
+.icon{      
+  display: flex;
+  justify-content: center;
   }
 
   .iconfont{  
     font-size: 15px;
-    
-   
+    --background: white;
+    --color: #070101;  
   }
   .iconfontt{  
     font-size: 15px;
-   
-   
+    --background:white;
+    --color: #070101;  
   }
+  .cen{
+      text-align: center;
+  }
+  .allinputstyles{
+    text-align: justify;
+  }
+  ion-input{
+    height:50px;
+    white-space:pre-line;  
+    position:relative;
+    top:-7px;
+  }
+  
+  
