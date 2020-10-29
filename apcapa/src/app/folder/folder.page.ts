@@ -16,6 +16,48 @@ import { IonContent } from '@ionic/angular';
 
 export class FolderPage implements OnInit {
 
+  list_original = ['item 1','item 2','item 3','item 4'];
+  list_to_show = this.list_original;
+  selected_index = -1;
+  show_list = true;
+  
+  moverenapp(){
+    this.route.navigate(['/','pagoonline']);
+    }
+  onCancel(val) {
+    this.show_list = false;
+  }
+
+  click_bar() {
+    this.show_list = true;
+  }
+
+  click_item(val)
+  {
+        for (let i = 0 ; i < this.list_original.length; i++)
+        {
+            if (this.list_to_show[val].toUpperCase() === this.list_original[i].toUpperCase()) {
+                this.selected_index = i;
+                break;
+            }
+        }
+        this.show_list = false;
+  }
+
+  change_query(query)
+  {
+                let k = 0;
+                this.list_to_show = [];
+                for (let i = 0 ; i < this.list_original.length; i++)
+                {
+                    if (this.list_original[i].toUpperCase().includes(query.toUpperCase()))
+                    {
+                       this.list_to_show[k] =  this.list_original[i];
+                       k += 1;
+                    }
+                }
+  }
+
   @ViewChild(IonContent) content: IonContent;
 
   scrollToTop() {
@@ -57,6 +99,10 @@ export class FolderPage implements OnInit {
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     
+  }
+
+  buscar(event){
+
   }
   async segmentChanged(ev){
     await this.selectedSlide.slideTo(this.segment);
@@ -236,5 +282,6 @@ async presentLoading() {
   const { role, data } = await loading.onDidDismiss();
   console.log('Cargando');
 }
+
 
 }

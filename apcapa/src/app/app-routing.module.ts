@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'pagoonline',
     loadChildren: () => import('./componentes/pagoonline/pagoonline.module').then( m => m.PagoonlinePageModule)
+  },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./componentes/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
   }
 ];
 
