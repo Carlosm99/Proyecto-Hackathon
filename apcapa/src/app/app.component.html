@@ -3,9 +3,13 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Menu</ion-list-header>
-          <ion-note>Comisión de Agua Potable y Alcantarillado</ion-note>
-
+          <ion-chip color="primary" style="height: 34px;">
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>Carlos Monterrosa</ion-label>
+          </ion-chip>
+          <ion-list-header style="font-size: 14px;">carlos@gmail.com</ion-list-header>        
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>

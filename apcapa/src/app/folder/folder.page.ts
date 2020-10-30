@@ -200,8 +200,8 @@ export class FolderPage implements OnInit {
     const loading = await this.loadingController.create({
       cssClass: "my-custom-class",
       message: "Cargando",
-      mode: "ios",
-      duration: 2000,
+      mode: "ios",      
+      duration: 500,
     });
     await loading.present();
 
