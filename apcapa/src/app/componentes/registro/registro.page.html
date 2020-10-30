@@ -1,46 +1,51 @@
 <ion-header>
-  <ion-toolbar>   
-    <img class="icon" src="assets/toppart.jpg" alt="">
+  <ion-toolbar>
+    <img class="icon" src="assets/toppart.jpg" alt="" />
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <br>
-  <ion-icon class="fixicon"name="person-circle-outline"></ion-icon>
-  <br>
-  
+  <br />
+  <ion-icon class="fixicon" name="person-circle-outline"></ion-icon>
+  <br />
+
   <ion-item class="allinputstyle">
     <ion-label position="floating">Nombre completo</ion-label>
     <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
-
   </ion-item>
-  <br>
+  <br />
   <ion-item class="allinputstyle">
     <ion-label position="floating">Número de contrato</ion-label>
     <ion-input type="text" [(ngModel)]="contract" name="contract"></ion-input>
-
   </ion-item>
-  <br>
+  <br />
   <ion-item class="allinputstyle">
     <ion-label position="floating"> Correo electrónico </ion-label>
     <ion-input type="text" [(ngModel)]="email " name="email"></ion-input>
-
   </ion-item>
-  <br>
+  <br />
   <ion-item class="allinputstyle">
     <ion-label position="floating"> Teléfono </ion-label>
     <ion-input type="text" [(ngModel)]="telfon" name="telfon"></ion-input>
-
   </ion-item>
-  <br>
+  <br />
   <ion-item class="allinputstyle">
     <ion-label position="floating"> Contraseña </ion-label>
-    <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-
+    <ion-input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+    ></ion-input>
   </ion-item>
-  <br>
-  <ion-button shape="round"routerLink="/folder/Inbox" class="loginbotton" (click)="OnSubmitRegister()">Crear</ion-button>
-  <br>
-  <br>
-  <P class="loginback" routerLink="/login">Ya tengo una cuenat</P>
+  <br />
+  <ion-button
+    shape="round"
+    routerLink="/folder/Inbox"
+    class="loginbotton"
+    (click)="OnSubmitRegister()"
+    >Crear</ion-button
+  >
+  <br />
+  <br />
+  <p class="loginback" routerLink="/login">Ya tengo una cuenat</p>
 </ion-content>

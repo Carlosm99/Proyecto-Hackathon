@@ -3,43 +3,113 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
-    <img  class="icon" src="assets/toppart.jpg" alt="">
-  
-    
+
+    <img class="icon" src="assets/toppart.jpg" alt="" />
   </ion-toolbar>
-  
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
+  <ion-grid>
+    <ion-row
+      ><ion-progress-bar
+        type="indeterminate"
+        reversed="true"
+        color="secondary"
+      ></ion-progress-bar
+    ></ion-row>
+    <ion-row style="text-align: center;background-color: rgb(91, 218, 235);">
+      <ion-col>
+        <label style="color: white;" class="recip">Pago en línea </label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        style="
+          background-color: white;
+          border: 1px solid;
+          text-align: center;
+          font-weight: bold;
+        "
+      >
+        <div style="text-align: center">
+          Total a pagar
+          <p class="amountn">$549.00</p>
+        </div>
+      </ion-col>
+      <ion-col
+        no-padding
+        style="
+          background-color: white;
+          border: 1px solid;
+          align-content: center;
+        "
+      >
+        <ion-row
+          no-padding
+          style="background-color: white; border: 1px solid; text-align: center"
+        >
+          Mes de facturación<br /><strong>OCTUBRE</strong>
+        </ion-row>
+        <ion-row
+          no-padding
+          style="background-color: white; border: 1px solid; text-align: center"
+        >
+          Pagar antes de<br />16/28/2020
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row style="text-align:left; background-color: gray">
+      <ion-col>
+        <label style="color: white;text-align: left;" class="recipp">Tarjetas registrados</label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-grid>
     <ion-row style="text-align: center;">
       <ion-col>
-        <label class="recip" >Estado de cuenta</label>  
+        <ion-items>
+          <ion-item>
+            <label> *******9419</label>
+            <ion-icon style="color:rgb(236, 17, 152) ;" slot="start" name="trash"></ion-icon>
+            <ion-icon slot="start" name="card"></ion-icon>
+          </ion-item>
+        </ion-items>
       </ion-col>
     </ion-row>
   </ion-grid>
+
   <ion-grid>
-    <ion-row >
-      <ion-col style="background-color: white;border: 1px solid;text-align: center;font-weight: bold;">
-        <div style="text-align: center;">         
-            Total a pagar         
-          <p class="amountn">
-            $549.00
-          </p>
-        </div>
+    <ion-row style="text-align: center;">
+      <ion-col>
+        <ion-items>
+          <ion-item>
+            <ion-label style="font-size: 18px;font-weight: bold;color: gray;">Agrega opción de pago</ion-label>
+            
+            <ion-icon (click)="presentAlertPrompt()" style="font-size:34px;" color="secondary"slot="end" name="add">
+              
+            </ion-icon>
+          </ion-item>
+        </ion-items>
       </ion-col>
-      <ion-col no-padding style="background-color: white;border: 1px solid;align-content: center;">
-        
-        <ion-row no-padding style="background-color: white;border: 1px solid;text-align: center;">
-           Mes de facturación<br><strong>OCTUBRE</strong>
-        </ion-row>
-        <ion-row no-padding style="background-color: white;border: 1px solid;text-align: center;">
-          Pagar antes de<br>16/28/2020
-        </ion-row>
-                 
-      </ion-col>      
     </ion-row>
   </ion-grid>
- 
+
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row style="text-align: center">
+      <ion-col>
+        <ion-button class="paymentbotton" shape="round">Pagar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="paymentbotto" shape="round">Pagar con tarjeta</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

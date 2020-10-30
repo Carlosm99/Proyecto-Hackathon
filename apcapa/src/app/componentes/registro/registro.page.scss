@@ -1,55 +1,56 @@
-ion-content{
-    --ion-background-color: #00A2C5!important;
+ion-content {
+  --ion-background-color: #00a2c5 !important;
 }
-.loginbotton{
-    display: flex; justify-content: center;
-    border-radius: 50%;
-    width: 200px;
-    position: center;
-    display: center;
-    justify-content: center;
-    margin: auto;
-    --background: #ffffff;
-    --color: #070101;
+.loginbotton {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 200px;
+  position: center;
+  display: center;
+  justify-content: center;
+  margin: auto;
+  --background: #ffffff;
+  --color: #070101;
 }
-.allinputstyle{
-    text-align: center;
-    justify-content: center;
-    border-radius: 24px;
-    --ion-background-color: #ffffff!important;
-    position: center;
-    display: center;
-   /* width: 150px;*/
-    width: 250px;
-    margin: auto;
-    height: 45px;
+.allinputstyle {
+  text-align: center;
+  justify-content: center;
+  border-radius: 24px;
+  --ion-background-color: #ffffff !important;
+  position: center;
+  display: center;
+  /* width: 150px;*/
+  width: 250px;
+  margin: auto;
+  height: 45px;
 }
-.loginback{
-    text-align: center;
+.loginback {
+  text-align: center;
 }
-.icon{
-    position: center;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.icon {
+  position: center;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-ion-toolbar{
-    position: center;
+ion-toolbar {
+  position: center;
 }
-.fixicon{
-    /*display: Block;
+.fixicon {
+  /*display: Block;
     margin-left: auto ;
     margin-right: auto;
     width: 150px;
     height: 150px;
     border-radius: 15%;*/
-    display: Block;
-    margin-right: auto;
-    margin-left: auto ;
-    width: 150px;
-    height: 150px;
-    //margin-left: 25%;
-    overflow: hidden;
-    border-radius: 75%;
+  display: Block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 150px;
+  height: 150px;
+  //margin-left: 25%;
+  overflow: hidden;
+  border-radius: 75%;
 }

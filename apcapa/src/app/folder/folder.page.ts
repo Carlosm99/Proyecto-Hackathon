@@ -1,29 +1,33 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { AuthService } from "../servicios/auth.service";
-import { NavController, LoadingController, IonSlides, ActionSheetController, AlertController, IonSegment } from '@ionic/angular';
-import { url } from 'inspector';
-import {Router} from '@angular/router';
-import { type } from 'os';
-import { IonContent } from '@ionic/angular';
-
+import {
+  NavController,
+  LoadingController,
+  IonSlides,
+  ActionSheetController,
+  AlertController,
+  IonSegment,
+} from "@ionic/angular";
+import { url } from "inspector";
+import { Router } from "@angular/router";
+import { type } from "os";
+import { IonContent } from "@ionic/angular";
 
 @Component({
-  selector: 'app-folder',
-  templateUrl: './folder.page.html',
-  styleUrls: ['./folder.page.scss'],
+  selector: "app-folder",
+  templateUrl: "./folder.page.html",
+  styleUrls: ["./folder.page.scss"],
 })
-
 export class FolderPage implements OnInit {
-
-  list_original = ['item 1','item 2','item 3','item 4'];
+  list_original = ["item 1", "item 2", "item 3", "item 4"];
   list_to_show = this.list_original;
   selected_index = -1;
   show_list = true;
-  
-  moverenapp(){
-    this.route.navigate(['/','pagoonline']);
-    }
+
+  moverenapp() {
+    this.route.navigate(["/", "pagoonline"]);
+  }
   onCancel(val) {
     this.show_list = false;
   }
@@ -32,30 +36,28 @@ export class FolderPage implements OnInit {
     this.show_list = true;
   }
 
-  click_item(val)
-  {
-        for (let i = 0 ; i < this.list_original.length; i++)
-        {
-            if (this.list_to_show[val].toUpperCase() === this.list_original[i].toUpperCase()) {
-                this.selected_index = i;
-                break;
-            }
-        }
-        this.show_list = false;
+  click_item(val) {
+    for (let i = 0; i < this.list_original.length; i++) {
+      if (
+        this.list_to_show[val].toUpperCase() ===
+        this.list_original[i].toUpperCase()
+      ) {
+        this.selected_index = i;
+        break;
+      }
+    }
+    this.show_list = false;
   }
 
-  change_query(query)
-  {
-                let k = 0;
-                this.list_to_show = [];
-                for (let i = 0 ; i < this.list_original.length; i++)
-                {
-                    if (this.list_original[i].toUpperCase().includes(query.toUpperCase()))
-                    {
-                       this.list_to_show[k] =  this.list_original[i];
-                       k += 1;
-                    }
-                }
+  change_query(query) {
+    let k = 0;
+    this.list_to_show = [];
+    for (let i = 0; i < this.list_original.length; i++) {
+      if (this.list_original[i].toUpperCase().includes(query.toUpperCase())) {
+        this.list_to_show[k] = this.list_original[i];
+        k += 1;
+      }
+    }
   }
 
   @ViewChild(IonContent) content: IonContent;
@@ -65,223 +67,227 @@ export class FolderPage implements OnInit {
   }
   loadData(event) {
     setTimeout(() => {
-      console.log('Done');
+      console.log("Done");
       event.target.complete();
     }, 500);
   }
 
   slideOptions = {
-    direction: 'vertical',
+    direction: "vertical",
   };
   selectedSlide: any;
-  segment =0;
-  segmen =0;
+  segment = 0;
+  segmen = 0;
 
-  sliderOptions ={
-   initialSlide: 0,
-   slidesPerview: 1,
-   speed: 400
-  }
+  sliderOptions = {
+    initialSlide: 0,
+    slidesPerview: 1,
+    speed: 400,
+  };
   public folder: string;
 
-  constructor(private activatedRoute: ActivatedRoute,
-    public authservice : AuthService,
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    public authservice: AuthService,
     private navCtrl: NavController,
     public actionSheetController: ActionSheetController,
-    private route:Router,
+    private route: Router,
     public alertController: AlertController,
-    public loadingController: LoadingController) { }
+    public loadingController: LoadingController
+  ) {}
 
-  Onlogout(){
-      this.authservice.logout();
-   }
+  Onlogout() {
+    this.authservice.logout();
+  }
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    
+    this.folder = this.activatedRoute.snapshot.paramMap.get("id");
   }
 
-  buscar(event){
-
-  }
-  async segmentChanged(ev){
+  buscar(event) {}
+  async segmentChanged(ev) {
     await this.selectedSlide.slideTo(this.segment);
-    }
-   async slideShanged(slides : IonSlides){
-   this.selectedSlide = slides;
-   slides.getActiveIndex().then(selectedIndex =>{
-     this.segment = selectedIndex;
-   })
-   }
+  }
+  async slideShanged(slides: IonSlides) {
+    this.selectedSlide = slides;
+    slides.getActiveIndex().then((selectedIndex) => {
+      this.segment = selectedIndex;
+    });
+  }
 
-   slideOpt ={
-    direction: 'horizontal'
+  slideOpt = {
+    direction: "horizontal",
   };
 
-   async openActionSheet() {
+  async openActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      
-      header: 'Seleccione tipo reporte ',
-      cssClass: 'my-custom-class',
-      mode: 'ios',
-      buttons: [{
-        text: 'Fugas en predio o calle',        
-        role: '',      
-        icon: '',
-        handler: () => {                
-          this.route.navigate(['/','fotoshome']);
-          this.presentLoading();
-        }
-        
-      }, {
-        text: 'Medidores rotos o perdidos',
-        icon: '',        
-        handler: () => {
-          this.presentLoading();
-          console.log('Share clicked');
-        }
-      }, {
-        text: 'Tomas clandestinas',
-        icon: '',
-        handler: () => {
-          this.presentLoading();
-          console.log('Play clicked');
-        }
-      }, {
-        text: 'Quejas y denuncias',
-        icon: '',
-        handler: () => {
-          this.presentLoading();
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Falta de suministro de agua',
-        icon: '',
-        handler: () => {
-          this.presentLoading();
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Inconformidades',
-        icon: '',
-        handler: () => {
-          this.presentLoading();
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cambio de giro ',
-        icon: '',
-        handler: () => {
-          this.presentLoading();
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancelar',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
+      header: "Seleccione tipo reporte ",
+      cssClass: "my-custom-class",
+      mode: "ios",
+      buttons: [
+        {
+          text: "Fugas en predio o calle",
+          role: "",
+          icon: "",
+          handler: () => {
+            this.route.navigate(["/", "fotoshome"]);
+            this.presentLoading();
+          },
+        },
+        {
+          text: "Medidores rotos o perdidos",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Share clicked");
+          },
+        },
+        {
+          text: "Tomas clandestinas",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Play clicked");
+          },
+        },
+        {
+          text: "Quejas y denuncias",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Favorite clicked");
+          },
+        },
+        {
+          text: "Falta de suministro de agua",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Favorite clicked");
+          },
+        },
+        {
+          text: "Inconformidades",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Favorite clicked");
+          },
+        },
+        {
+          text: "Cambio de giro ",
+          icon: "",
+          handler: () => {
+            this.presentLoading();
+            console.log("Favorite clicked");
+          },
+        },
+        {
+          text: "Cancelar",
+          icon: "close",
+          role: "cancel",
+          handler: () => {
+            console.log("Cancel clicked");
+          },
+        },
+      ],
     });
     await actionSheet.present();
-}
+  }
 
-async presentAlertPrompt() {
-  const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
-    header: 'Prompt!',
-    inputs: [
-      {
-        name: 'Octubre',
-        id: 'card1'      
-     
-      },      
-      {
-        name: 'name2',
-        type: 'text',
-        id: 'name2-id',
-        value: 'hello',
-        placeholder: 'Placeholder 2'
-      },
-      // multiline input.
-      {
-        name: 'paragraph',
-        id: 'paragraph',
-        type: 'textarea',
-        placeholder: 'Placeholder 3'
-      },
-      {
-        name: 'name3',
-        value: 'http://ionicframework.com',
-        type: 'url',
-        placeholder: 'Favorite site ever'
-      },
-      // input date with min & max
-      {
-        name: 'name4',
-        type: 'date',
-        min: '2017-03-01',
-        max: '2018-01-12'
-      },
-      // input date without min nor max
-      {
-        name: 'name5',
-        type: 'date'
-      },
-      {
-        name: 'name6',
-        type: 'number',
-        min: -5,
-        max: 10
-      },
-      {
-        name: 'name7',
-        type: 'number'
-      },
-      {
-        name: 'name8',
-        type: 'password',
-        placeholder: 'Advanced Attributes',
-        cssClass: 'specialClass',
-        attributes: {
-          maxlength: 4,
-          inputmode: 'decimal'
-        }
-      }
-    ],
-    buttons: [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: () => {
-          console.log('Confirm Cancel');
-        }
-      }, {
-        text: 'Ok',
-        handler: () => {
-          console.log('Confirm Ok');
-        }
-      }
-    ]
-  });
+  async presentAlertPrompt() {
+    const alert = await this.alertController.create({
+      cssClass: "my-custom-class",
+      header: "Prompt!",
+      inputs: [
+        {
+          name: "Octubre",
+          id: "card1",
+        },
+        {
+          name: "name2",
+          type: "text",
+          id: "name2-id",
+          value: "hello",
+          placeholder: "Placeholder 2",
+        },
+        // multiline input.
+        {
+          name: "paragraph",
+          id: "paragraph",
+          type: "textarea",
+          placeholder: "Placeholder 3",
+        },
+        {
+          name: "name3",
+          value: "http://ionicframework.com",
+          type: "url",
+          placeholder: "Favorite site ever",
+        },
+        // input date with min & max
+        {
+          name: "name4",
+          type: "date",
+          min: "2017-03-01",
+          max: "2018-01-12",
+        },
+        // input date without min nor max
+        {
+          name: "name5",
+          type: "date",
+        },
+        {
+          name: "name6",
+          type: "number",
+          min: -5,
+          max: 10,
+        },
+        {
+          name: "name7",
+          type: "number",
+        },
+        {
+          name: "name8",
+          type: "password",
+          placeholder: "Advanced Attributes",
+          cssClass: "specialClass",
+          attributes: {
+            maxlength: 4,
+            inputmode: "decimal",
+          },
+        },
+      ],
+      buttons: [
+        {
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: () => {
+            console.log("Confirm Cancel");
+          },
+        },
+        {
+          text: "Ok",
+          handler: () => {
+            console.log("Confirm Ok");
+          },
+        },
+      ],
+    });
 
-  await alert.present();
-}
+    await alert.present();
+  }
 
-async presentLoading() {
-  const loading = await this.loadingController.create({
-    cssClass: 'my-custom-class',
-    message: 'Cargando',
-    mode:'ios',
-    duration: 2000
-  });
-  await loading.present();
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: "my-custom-class",
+      message: "Cargando",
+      mode: "ios",
+      duration: 2000,
+    });
+    await loading.present();
 
-  const { role, data } = await loading.onDidDismiss();
-  console.log('Cargando');
-}
-
-
+    const { role, data } = await loading.onDidDismiss();
+    console.log("Cargando");
+  }
 }
