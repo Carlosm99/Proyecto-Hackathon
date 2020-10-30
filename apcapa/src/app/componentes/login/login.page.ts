@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
       cssClass: "my-custom-class",
       message: "Comisión de Agua Potable y Alcantarillado",
       mode: "ios",
-      duration: 5000,
+      duration: 4000,
     });
     await loading.present();
 
