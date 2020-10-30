@@ -20,8 +20,11 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(private AuthService: AuthService, public router: Router,
-    public loadingController: LoadingController) {}
+  constructor(
+    private AuthService: AuthService,
+    public router: Router,
+    public loadingController: LoadingController
+  ) {}
 
   ngOnInit() {}
   onSubmitlogin() {
@@ -31,7 +34,6 @@ export class LoginPage implements OnInit {
         this.router.navigate(["/folder/Inbox"]);
       })
       .catch((err) => alert("contraseña o correo error"));
-      
   }
   async presentLoading() {
     const loading = await this.loadingController.create({
@@ -43,6 +45,5 @@ export class LoginPage implements OnInit {
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    
   }
 }

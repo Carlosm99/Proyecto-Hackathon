@@ -1,24 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button color="primary" style="font-size: 40px;"></ion-menu-button>
+      <ion-menu-button
+        color="primary"
+        style="font-size: 40px"
+      ></ion-menu-button>
     </ion-buttons>
-    <img class="icon" src="assets/toppart.jpg" alt="">
-    
+    <img class="icon" src="assets/toppart.jpg" alt="" />
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content padding>
-  <h3 *ngIf="images.length == 0" text-center> </h3>
- 
+  <h3 *ngIf="images.length == 0" text-center></h3>
+
   <ion-list>
     <ion-item *ngFor="let img of images; index as pos" text-wrap>
       <ion-thumbnail slot="start">
         <ion-img [src]="img.path"></ion-img>
       </ion-thumbnail>
-      <ion-label>
-        {{ img.name }}
-      </ion-label>
+      <ion-label> {{ img.name }} </ion-label>
       <ion-button slot="end" fill="clear" (click)="startUpload(img)">
         <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
       </ion-button>
@@ -28,11 +28,17 @@
     </ion-item>
   </ion-list>
 </ion-content>
- 
+
 <ion-footer>
   <ion-toolbar color="primary">
-    <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
+    <ion-button
+      fill="clear"
+      expand="full"
+      color="light"
+      (click)="selectImage()"
+    >
       <ion-icon slot="start" name="camera"></ion-icon>
-      Seleccione una imagen</ion-button>
+      Seleccione una imagen</ion-button
+    >
   </ion-toolbar>
 </ion-footer>

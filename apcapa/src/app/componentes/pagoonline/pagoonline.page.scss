@@ -1,39 +1,38 @@
-.icon{  
-    display: block;
-    margin-left: 50px;
-    /*margin-right: auto;*/
-  }
-.mespago{
+.icon {
+  display: block;
+  margin-left: 50px;
+  /*margin-right: auto;*/
+}
+.mespago {
   font-size: 12px;
   text-align: center;
 }
-.total{
- font-size: 18px;
- text-align: center;
+.total {
+  font-size: 18px;
+  text-align: center;
 }
-.amountn{
-font-size: 18px;
-text-align: center;
-font-weight: bold;
+.amountn {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
 }
-.recip{
+.recip {
   font-size: 24px;
   padding-bottom: 2px;
   padding-top: 2px;
   text-align: center;
-  background-color:rgb(91, 218, 235);
+  background-color: rgb(91, 218, 235);
   --color: white;
-  
 }
-.recipp{
-  font-size: 24px; 
+.recipp {
+  font-size: 24px;
   padding-bottom: 2px;
   padding-top: 2px;
   text-align: left;
- 
 }
-.paymentbotton{
-  display: flex; justify-content: center;
+.paymentbotton {
+  display: flex;
+  justify-content: center;
   border-radius: 75%;
   width: 150px;
   position: center;
@@ -45,8 +44,9 @@ font-weight: bold;
   font-size: 12px;
   height: 40px;
 }
-.paymentbotto{
-  display: flex; justify-content: center;
+.paymentbotto {
+  display: flex;
+  justify-content: center;
   border-radius: 75%;
   width: 150px;
   position: center;

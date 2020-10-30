@@ -1,42 +1,39 @@
-.icon{      
+.icon {
   display: flex;
   justify-content: center;
-  }
+}
 
-  .iconfont{  
-    font-size: 15px;
-    --background: white;
-    --color: #070101;  
-  }
-  .iconfontt{  
-    font-size: 15px;
-    --background:white;
-    --color: #070101;  
-  }
-  .cen{
-      text-align: center;
-  }
-  .allinputstyles{
-    text-align: left;
-  }
-  ion-input{
-    height:50px;
-    white-space:pre-line;  
-    position:relative;
-    top:-7px;
-  }
-  .ordercard{
-   display: flex;
-    justify-content: center;
-    
-  }
-  .ordercards{
-   align-items: center;
-   text-align: center;
-     
-   }
-   .icon{  
-    display: block;
-    margin-left: 50px;
-  }
-  
+.iconfont {
+  font-size: 15px;
+  --background: white;
+  --color: #070101;
+}
+.iconfontt {
+  font-size: 15px;
+  --background: white;
+  --color: #070101;
+}
+.cen {
+  text-align: center;
+}
+.allinputstyles {
+  text-align: left;
+}
+ion-input {
+  height: 50px;
+  white-space: pre-line;
+  position: relative;
+  top: -7px;
+}
+.ordercard {
+  display: flex;
+  justify-content: center;
+}
+.ordercards {
+  align-items: center;
+  text-align: center;
+}
+.icon {
+  display: block;
+  margin-left: 50px;
+}
